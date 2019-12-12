@@ -8,6 +8,15 @@ morning.  Bonus: if I am at all early I can take a look at PHPUnit, the
 testing method.
 ## Instructor
 Edwin Diaz, Udemy
+## Features of the Photo Project
+* jQuery
+* User as a class
+* AJAX for faster page
+* An upload page, using a module
+* Pagination
+* Bootstrap to make it responsive
+* Photo as a class
+
 ## Course description
 Total lecture time: 18 hours.
 
