@@ -7,6 +7,11 @@
                             Admin content
                             <small>full hearts, bright eyes, can't lose</small>
                         </h1>
+
+<!-- from lecture 30 hope I wrote this right -->
+<?php if($database->connection) {echo "true";} ?>
+
+
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
