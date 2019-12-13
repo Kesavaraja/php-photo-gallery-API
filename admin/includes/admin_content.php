@@ -1,8 +1,11 @@
 <div class="container-fluid">
 
 <?php
-  // todo not sure if this is the correct place; it sure seemed to help
-  require_once("database.php");
+  // todo not sure if this is the correct place; both sure seemed to help
+  // require_once("database.php");
+
+    require_once "init.php"; // my hack but seems wrong
+
 ?>
 
 <!-- Page Heading -->
@@ -13,15 +16,27 @@
     </h1>
 
 <?php
-  //        ----QUERY---
+  //        ----QUERY TEST---
   $sql = "SELECT * FROM `users` WHERE id=400";
   if(!$database){ 
     die("No db object created yet.");
   } else {        
     $result = $database->query($sql);
     $user_found = mysqli_fetch_array($result);
-    echo $user_found['username'];
+    // echo $user_found['username']; uncomment to test!
   }
+
+  //        ----USER.php TEST---
+  $user = new User();
+  $test_results = $user->find_all_users();
+  foreach ($test_results as $r){
+    if(!$r){
+      die ("There's no THERE there.");
+    } else {
+      echo("found ". $r['username']);
+    }
+  }
+  
 ?>
 
 <!-- from lecture 30 hope I wrote this right -->
