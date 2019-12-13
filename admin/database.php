@@ -46,9 +46,12 @@ public function escape_string($string) {
 
 } // end DATABASE class
 
+// todo debugging
 $database = new Database();
-
-echo "about to create a new database object in database.php";
-echo "we just created a new database object in database.php";
+if (!$database) {
+    echo "Failed to create a db.";
+} else {
+    echo "Succeeded in creating a NEW \$database object.";
+}
 
 ?>
