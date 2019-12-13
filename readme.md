@@ -1,7 +1,7 @@
 # PHP Project
 
 ## Course title
-Programming for Beginners + Project
+Programming for Beginners + Project (Udemy)
 ## My goal
 I need to finish four sections a day if I am to be done by Tuesday 
 morning.  Bonus: if I am at all early I can take a look at PHPUnit, the 
