@@ -1,5 +1,10 @@
             <div class="container-fluid">
+<?php
+// todo remove after debugging
 
+require_once("database.php");
+
+?>
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -7,6 +12,18 @@
                             Admin content
                             <small>full hearts, bright eyes, can't lose</small>
                         </h1>
+                        <?php
+                $sql = "SELECT * FROM `users` WHERE id=400";
+                    if(!$database){ 
+        die("No db object created yet.");
+    } else {        
+                $result = $database->query($sql);
+                $user_found = mysqli_fetch_array($result);
+                echo $user_found['username'];
+    }
+
+
+                ?>
 
 <!-- from lecture 30 hope I wrote this right -->
 <?php if($database->connection) {echo "true";} ?>
@@ -26,3 +43,5 @@
 
             </div>
             <!-- /.container-fluid -->
+
+            <!-- Brian: Can I just crash your party? What person can be on city council?   -->
