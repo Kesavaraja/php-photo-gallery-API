@@ -44,3 +44,5 @@ private methods inside the object.
 * The obsession with semicolons is making me 
 do things like end Git Commit Messages with 
 a semicolon accidentally.  
+* Open sublime in four pane grid. Use search 
+to search from the root of the project.
