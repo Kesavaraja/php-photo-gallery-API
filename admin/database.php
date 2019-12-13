@@ -16,12 +16,11 @@ class Database {
 	}
 
 	public function open_db_connection(){
-		$this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-		if(mysqli_connect_errno()){
-			die("db connxn failed barfily" . mysqli_error());
+		$this->connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+		if($this->connection->connect_errno){
+			die("db connxn failed barfily" . $this->connection->connect_error);
 		}
 	}
-
 
 
 public function query($sql){
@@ -31,12 +30,18 @@ public function query($sql){
 	if(!$this->connection){ 
 		die("Your connection is AWOL.");
 	}
-	$result = mysqli_query($this->connection, $sql);
-	if(!$result){ 
-		die("Query failed.");
-	}
+	$result = $this->connection->query($sql);
+	$this->outcome_success($result);
 	return $result; 
 }
+
+
+private function outcome_success($any){
+	if(!$any){ 
+		die("Result null for some reason in database.php!");
+	}
+}
+
 
 
 public function escape_string($string) {
