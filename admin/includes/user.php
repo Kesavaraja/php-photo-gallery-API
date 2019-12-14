@@ -19,6 +19,12 @@ public static function find_any($sql){
   return $result_set;
 } 
 
+public  function instantiate(){
+ $built_user = new self;
+ // $built_user->password = $this[password];
+ return $built_user; 
+}
+
 }
 
 

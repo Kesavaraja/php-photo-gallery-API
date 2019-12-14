@@ -1,4 +1,7 @@
-<?php include("includes/header.php"); ?>
+<?php 
+include "includes/header.php"; 
+
+?>
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -43,8 +46,8 @@
                         <h1 class="page-header">
                             Users
                             <small><br /> _   _ ___ _ __ ___ <br />
- | | | / __| '__/ __|<br />
- | |_| \__ \ |  \__ \<br />
+ | |  o| / __| '__/ __|<br />
+ | |_|0   \__ \ |  \__ \<br />
   \__,_|___/_|  |___/</small>
                         </h1>
                         <ol class="breadcrumb">

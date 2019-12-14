@@ -44,6 +44,12 @@
     echo("IN MONO found ". $test_mono['username']);
   }
 
+  //        ----INSTANTIATE A USER AFTER FOUND, TEST---
+  $found_user = User::find_user_byID(400);
+  $showable_user = $found_user;
+  echo "INSTANTIATE soon, look at the passwrd: ";
+  print_r ($showable_user);
+
   
 ?>
 
