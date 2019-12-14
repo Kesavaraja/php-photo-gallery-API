@@ -26,16 +26,24 @@
     // echo $user_found['username']; uncomment to test!
   }
 
-  //        ----USER.php TEST---
-  $user = new User();
-  $test_results = $user->find_all_users();
-  foreach ($test_results as $r){
+  //        ----USER.php TEST 1---
+  $test_multi = User::find_all_users();
+  foreach ($test_multi as $r){
     if(!$r){
       die ("There's no THERE there.");
     } else {
-      echo("found ". $r['username']);
+      echo("IN MULTI found ". $r['username']);
     }
   }
+
+  //        ----USER.php TEST 2---
+  $test_mono = User::find_user_byID(400);
+  if(!$test_mono){
+    die ("There's no THERE there.");
+  } else {
+    echo("IN MONO found ". $test_mono['username']);
+  }
+
   
 ?>
 
