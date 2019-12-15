@@ -9,11 +9,7 @@ class User {
 
   public static function find_user_byID($n){
     $results_as_array = self::find_any("SELECT * FROM users WHERE id= $n");
-    if(!empty($results_as_array)){
-      return array_pop($results_as_array);  // todo WORKS??
-    } else {
-      return false; // todo: go catch that in all CALLS with an IF
-    }
+    return !empty($results_as_array)? array_pop($results_as_array) : false;
   }
 
 
