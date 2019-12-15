@@ -6,18 +6,36 @@ class User {
     return self::find_any("SELECT * FROM users");
   }
 
-// User::find_user_byID
 
   public static function find_user_byID($n){
-    $results_as_mysqli = self::find_any("SELECT * FROM users WHERE id= $n");
-    return mysqli_fetch_array($results_as_mysqli);
+    $results_as_array = self::find_any("SELECT * FROM users WHERE id= $n");
+    if(!empty($results_as_array)){
+      return array_pop($results_as_array);  // todo WORKS??
+    } else {
+      return false; // todo: go catch that in all CALLS with an IF
+    }
   }
 
+
+
+
+
 public static function find_any($sql){
+  // function returns AN ARRAY
+  // function takes A QUERY STRING
+  // diaz has this in the calling func. but mine works. todo
   global $database;
-  $result_set = $database->query($sql);
-  return $result_set;
+  $set_from_SQL = $database->query($sql); //not an array yet
+  $array_from_SQL = array();
+  while($row = mysqli_fetch_array($set_from_SQL)  ){
+    array_push($array_from_SQL, $row);
+  }
+  return $array_from_SQL ;
 } 
+
+
+
+
 
 private function has_the_attribute(){
   return true;  // TODO TODO c. L 47 diaz

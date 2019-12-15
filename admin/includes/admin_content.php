@@ -27,12 +27,12 @@
   }
 
   //        ----USER.php TEST 1---
-  $test_multi = User::find_all_users();
-  foreach ($test_multi as $r){
+  $all_users = User::find_all_users();
+  foreach ($all_users as $r){
     if(!$r){
       die ("There's no THERE there.");
     } else {
-      echo("IN MULTI found ". $r['username']);
+      echo("This user: ". $r['username'] . $r['password']);
     }
   }
 
@@ -50,6 +50,7 @@
   echo "it   made this    for   a userrrrr: ";
   print_r ($showable_user);
 
+  $users = User::find_all_users()
   
 ?>
 
