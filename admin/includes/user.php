@@ -37,18 +37,27 @@ private function has_the_attribute(){
   return true;  // TODO TODO c. L 47 diaz
 }
 
-public  function instantiate($user_object){
+
+
+
+
+
+
+
+
+
+
+
+
+//  todo nervous, sunday morning. REMEMBER TO REMOVE has attribute above
+public static function instantiate($user_object){
  $fresh_user = new self;
  foreach ($user_object as $key => $val){
-  if($fresh_user->has_the_attribute()){
-    $fresh_user->key = $val;
-    echo "has--HAS--";
+    $fresh_user->key = $user_object[$key];
   }
-
- }
- echo "ho";
  return $fresh_user;
 }
+
 
 
 
