@@ -19,13 +19,27 @@ public static function find_any($sql){
   return $result_set;
 } 
 
-public  function instantiate(){
- $built_user = new self;
- // $built_user->password = $this[password];
- return $built_user; 
+private function has_the_attribute(){
+  return true;  // TODO TODO c. L 47 diaz
 }
 
+public  function instantiate($user_object){
+ $fresh_user = new self;
+ foreach ($user_object as $key => $val){
+  if($fresh_user->has_the_attribute()){
+    $fresh_user->key = $val;
+    echo "has--HAS--";
+  }
+
+ }
+ echo "ho";
+ return $fresh_user;
 }
 
 
+
+
+}
 ?>
+
+

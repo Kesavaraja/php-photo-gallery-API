@@ -46,8 +46,8 @@
 
   //        ----INSTANTIATE A USER AFTER FOUND, TEST---
   $found_user = User::find_user_byID(400);
-  $showable_user = $found_user;
-  echo "INSTANTIATE soon, look at the passwrd: ";
+  $showable_user = User::instantiate($found_user);
+  echo "it   made this    for   a userrrrr: ";
   print_r ($showable_user);
 
   
