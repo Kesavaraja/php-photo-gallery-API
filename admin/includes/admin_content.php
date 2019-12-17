@@ -45,13 +45,12 @@
   }
 
   //        ----INSTANTIATE A USER AFTER FOUND, TEST---
-  $found_user = User::find_user_byID(400);
-  $showable_user = User::instantiate($found_user);
-  echo "it   made this    for   a userrrrr: ";
-  print_r ($showable_user);
-
-  $users = User::find_all_users()
-  
+  $user_as_assoc_array = User::find_user_byID(400); // associative array
+  $user_as_object = User::instantiate($user_as_assoc_array);
+  echo "If INSTANTIATE func works, should be fields here: ";
+  print_r ($user_as_object);
+  echo "\n\n";
+  echo "Fu Man Chu  ";
 ?>
 
 <!-- from lecture 30 hope I wrote this right -->

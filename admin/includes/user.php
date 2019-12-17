@@ -10,6 +10,7 @@ class User {
   public static function find_user_byID($n){
     $results_as_array = self::find_any("SELECT * FROM users WHERE id= $n");
     return !empty($results_as_array)? array_pop($results_as_array) : false;
+    // we are returning an associative array, eventually we want it to be as props-on-object
   }
 
 
@@ -38,22 +39,15 @@ private function has_the_attribute(){
 }
 
 
+ 
 
 
-
-
-
-
-
-
-
-
-
-//  todo nervous, sunday morning. REMEMBER TO REMOVE has attribute above
+//  Args: Associative Array
+//  Returns: object->properties
 public static function instantiate($user_object){
  $fresh_user = new self;
  foreach ($user_object as $key => $val){
-    $fresh_user->key = $user_object[$key];
+    $fresh_user->key = $user_object[$key]; // double check dollar signs: more? less?
   }
  return $fresh_user;
 }
